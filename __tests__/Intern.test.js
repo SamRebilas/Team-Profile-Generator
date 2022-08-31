@@ -9,5 +9,5 @@ test("Role will return answer: Intern", () =>{
 test("get school name", () =>{
     const school = "schoolName"
     const event = new Intern("Foo", 1, "@email", school)
-    expect(event.returnschoolName()).toBe(school)
+    expect(event.returnSchoolName()).toBe(school)
 })

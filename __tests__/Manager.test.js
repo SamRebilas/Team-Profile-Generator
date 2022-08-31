@@ -6,7 +6,7 @@ test("Role will return answer: Manager", () =>{
     expect(event.returnRole()).toBe(role)
 });
 
-TextDecoderStream("get office number", () =>{
+test("Get office number", () =>{
     const officeNumber = 1
     const event = new Manager("foo", 1, "@email", officeNumber)
     expect(event.returnOfficeNumber).toBe(officeNumber)
