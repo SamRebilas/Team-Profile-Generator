@@ -1,24 +1,24 @@
 const Engineer = require("./lib/Engineer")
 const Intern = require("./lib/Intern")
 const Manager = require("./lib/Manager")
-const generatePage = require("./dist/generate-html");
+const generateHTML = require("./dist/generate-html");
 const inquirer = require("inquirer");
 const fs = require("fs")
 
-
+//Questions for the user
 function employeeQuestions(Employees) {
   return inquirer
     .prompt([
-        {
-            type: "list",
-            name: "role",
-            message: "What is your role in the company?",
-            choices: ["Manager", "Engineer", "Intern"]
+    {
+        type: "list",
+        name: "role",
+        message: "What is your role in the company?",
+        choices: ["Manager", "Engineer", "Intern"]
         },
       { 
-        type: "input", 
-      name: "name", 
-      message: "What is the employees name?" },
+         type: "input", 
+         name: "name", 
+         message: "What is the employees name?" },
       {
         type: "input",
         name: "id",
@@ -48,11 +48,15 @@ function employeeQuestions(Employees) {
 
       }
     ])
+    //function for adding another new employee
     .then((newEmployee) => {
+        
         const {Add} = newEmployee
       return Add ? employeeQuestions(Employees) : Employees
+        
+     
 });
 }
+//supposed to send data to generateHTML file
 employeeQuestions()
-.then((employeeInfo) => employeeQuestions(employeeInfo))
- .then((Array)=> console.log(Array))
+ .then((data)=> generateHTML(data))

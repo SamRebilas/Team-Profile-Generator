@@ -1,3 +1,10 @@
-function generatePage(data){
-    return data
-}
+function generateHTML(data){
+    
+    return 
+
+
+
+
+
+} 
+
